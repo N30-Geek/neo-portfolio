@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Néo Coolman — Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     
     <!-- javascript -->
@@ -15,12 +17,19 @@
 <body>
     <header>
         <div class="brand">NEO C.</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact" class="btn ghost">Contact</a>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <nav class="nav-menu">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="contact-menu-item"><a href="#contact" class="btn primary nav-link"><i class="fas fa-paper-plane"></i> Contact</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -44,14 +53,26 @@
                     <button class="btn primary">Hire me!</button>
                     <a class="btn ghost" href="#contact">Contact me</a>
                 </div>
+
+                <div class="social-links" style="margin-top: 30px;">
+                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" title="Dribbble">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="hero-img-wrap reveal">
-                <div class="blob" title="Remplacez cette image: #hero-img">
-                    <!-- Remplacez src par votre photo si vous voulez -->
-                    <img id="hero-img"
-                        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><rect width='100%' height='100%' fill='%233b1a3f'/><text x='50%' y='50%' fill='%23ffd9e6' font-size='20' text-anchor='middle' dominant-baseline='middle' font-family='Inter'>Replace image</text></svg>"
-                        alt="Portrait">
+            <div class="hero-img-wrap">
+                <div class="blob">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop" alt="Néo Coolman" onerror="this.src='https://via.placeholder.com/400x400/1f1220/ffffff?text=N%C3%A9o+Coolman'">
                 </div>
             </div>
         </section>
@@ -75,15 +96,19 @@
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px">
                         <div class="muted">ONLINE COMMUNITY<br><small>Youtube 11k • Dribbble 112k</small></div>
                         <div class="stats">
-                            <div class="stat"><strong>+60</strong><small class="muted">Projets</small></div>
-                            <div class="stat"><strong>+2</strong><small class="muted">Clients</small></div>
-                            <div class="stat"><strong>+120</strong><small class="muted">Git Repos</small></div>
+                            <div class="stat"><strong class="stat-git">+60</strong><small class="muted">Projets</small></div>
+                            <div class="stat"><strong class="stat">+2</strong><small class="muted">Clients</small></div>
+                            <div class="stat"><strong class="stat-repo">+120</strong><small class="muted">Git Repos</small></div>
                         </div>
                     </div>
 
-                    <div class="download" style="margin-top:22px">
-                        <a class="btn" href="#" onclick="alert('Remplacez le lien par votre CV PDF')">Télécharger mon
-                            CV</a>
+                    <div class="about-cta" style="margin-top:24px">
+                        <button class="btn primary" onclick="event.preventDefault(); alert('Fonctionnalité de téléchargement du CV à implémenter');">
+                            <i class="fas fa-download"></i> Télécharger mon CV
+                        </button>
+                        <a href="#contact" class="btn ghost">
+                            <i class="fas fa-paper-plane"></i> Me contacter
+                        </a>
                     </div>
                 </div>
             </div>
@@ -97,25 +122,37 @@
                     <div>
                         <h4 class="muted">Front‑End</h4>
                         <div class="skill">
-                            <div class="meta"><span>HTML</span><span>94%</span></div>
+                            <div class="meta">
+                                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="skill-icon"> HTML</span>
+                                <span>94%</span>
+                            </div>
                             <div class="progress">
                                 <div class="bar" data-width="94%"></div>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="meta"><span>CSS</span><span>86%</span></div>
+                            <div class="meta">
+                                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="skill-icon"> CSS</span>
+                                <span>86%</span>
+                            </div>
                             <div class="progress">
                                 <div class="bar" data-width="86%"></div>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="meta"><span>JavaScript</span><span>90%</span></div>
+                            <div class="meta">
+                                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon"> JavaScript</span>
+                                <span>90%</span>
+                            </div>
                             <div class="progress">
                                 <div class="bar" data-width="90%"></div>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="meta"><span>React</span><span>73%</span></div>
+                            <div class="meta">
+                                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon"> React</span>
+                                <span>73%</span>
+                            </div>
                             <div class="progress">
                                 <div class="bar" data-width="73%"></div>
                             </div>
@@ -124,25 +161,38 @@
                     <div>
                         <h4 class="muted">Back‑end</h4>
                         <div class="skill">
-                            <div class="meta"><span>PHP</span><span>94%</span></div>
+                            <div class="meta">
+                                <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon"> Git</span>
+                                <span>85%</span>
+  <span>85%</span>
+</div>
                             <div class="progress">
                                 <div class="bar" data-width="94%"></div>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="meta"><span>Python</span><span>86%</span></div>
+                            <div class="meta">
+  <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon"> Python</span>
+  <span>86%</span>
+</div>
                             <div class="progress">
                                 <div class="bar" data-width="86%"></div>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="meta"><span>Node.js</span><span>90%</span></div>
+                            <div class="meta">
+  <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-icon"> Node.js</span>
+  <span>68%</span>
+</div>
                             <div class="progress">
                                 <div class="bar" data-width="90%"></div>
                             </div>
                         </div>
                         <div class="skill">
-                            <div class="meta"><span>Django</span><span>73%</span></div>
+                            <div class="meta">
+  <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" class="skill-icon"> Django</span>
+  <span>73%</span>
+</div>
                             <div class="progress">
                                 <div class="bar" data-width="73%"></div>
                             </div>
