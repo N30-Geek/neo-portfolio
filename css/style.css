@@ -218,9 +218,115 @@
   .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
   .badge{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--glass),transparent);border:1px solid rgba(255,255,255,0.03);font-weight:600;font-size:13px}
   .cta{display:flex;gap:12px}
-  .btn{padding:12px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);font-weight:700;cursor:pointer;transition:all .25s}
-  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 30px rgba(155,107,255,0.08);color:#111}
-  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--pink)}
+  /* Styles de base des boutons */
+  .btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 120px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Bouton primaire */
+  .btn.primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #111;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .btn.primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--accent-2), var(--accent));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn.primary:hover::before {
+    opacity: 1;
+  }
+  
+  .btn.primary:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Bouton ghost */
+  .btn.ghost {
+    background: transparent;
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .btn.ghost::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(242, 138, 165, 0.1);
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
+  
+  .btn.ghost:hover::before {
+    width: 100%;
+  }
+  
+  .btn.ghost:active {
+    transform: translateY(2px);
+  }
+  
+  /* Effet de vague au survol pour les deux types de boutons */
+  .btn::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+    border-radius: 50%;
+  }
+  
+  .btn:hover::after {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  /* Animation au clic */
+  @keyframes buttonClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+  
+  .btn:active {
+    animation: buttonClick 0.3s ease;
+  }
 
   /* Hero image blob */
   .hero-img-wrap{place-self:center;display:flex;align-items:center;justify-content:center;}
