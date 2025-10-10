@@ -239,25 +239,42 @@
                 </div>
                 <div class="project card">
                     <h4>Project Three</h4>
-                    <p class="muted">Une brève description du projet.</p>
-                </div>
             </div>
         </section>
 
-        <section id="contact" class="reveal">
-            <h3 style="color:var(--pink);letter-spacing:1px">Contact</h3>
-            <div style="height:18px"></div>
-            <div class="card contact">
-                <div>
-                    <form
-                        onsubmit="event.preventDefault();alert('Formulaire simulé — implémentez un backend ou utilisez Formspree')">
-                        <input class="input" placeholder="Votre nom" required>
-                        <div style="height:12px"></div>
-                        <input class="input" placeholder="Votre email" type="email" required>
-                        <div style="height:12px"></div>
-                        <textarea placeholder="Message" required></textarea>
-                        <div style="height:12px"></div>
-                        <button class="btn primary" type="submit">Envoyer</button>
+        <section id="contact" class="reveal" style="padding-bottom: 80px;">
+            <h3 style="color:var(--pink);letter-spacing:1px;text-align:center;margin-bottom:40px;">ME CONTACTER</h3>
+            
+            <div class="contact-container">
+                <!-- Formulaire de contact -->
+                <div class="contact-form card">
+                    <h4 style="margin-bottom:20px;">Envoyez-moi un message</h4>
+                    <form id="contactForm" class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Votre nom *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Votre email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Votre message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-submit full-width">
+                            <button type="submit" class="btn primary">
+                                <i class="fas fa-paper-plane"></i> Envoyer le message
+                            </button>
+                        </div>
                     </form>
                 </div>
                 <div>
