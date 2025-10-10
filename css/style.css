@@ -506,6 +506,64 @@
     margin: 0 auto;
   }
   
+  .contact-info {
+    background: linear-gradient(180deg, var(--card), rgba(31, 18, 32, 0.8));
+    padding: 30px;
+    border-radius: 16px;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .contact-detail:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--pink);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  
+  .contact-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+  
+  .contact-link:hover {
+    color: var(--pink);
+    transform: translateX(3px);
+  }
+  
+  @media (max-width: 768px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+      margin-top: 20px;
+    }
+  }
+  
   .contact-form {
     padding: 30px;
   }
