@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Néo Coolman — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- javascript -->
+     <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="brand">NEO C.</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact" class="btn ghost">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <div class="intro">
+                <small>Hello! my name is</small>
+                <h1>NEO COOLMAN</h1>
+                <h2>and I am a <span class="muted">Full‑Stack Developer / UI‑UX Designer</span></h2>
+
+                <div class="badges">
+                    <div class="badge">Front‑End developer</div>
+                    <div class="badge">Backend developer</div>
+                    <div class="badge">Design UI/UX</div>
+                    <div class="badge">DevOps</div>
+                </div>
+
+                <p class="muted">Vous pouvez en savoir plus sur moi via mon CV ou en me contactant.</p>
+
+                <div class="cta" style="margin-top:18px">
+                    <button class="btn primary">Hire me!</button>
+                    <a class="btn ghost" href="#contact">Contact me</a>
+                </div>
+            </div>
+
+            <div class="hero-img-wrap reveal">
+                <div class="blob" title="Remplacez cette image: #hero-img">
+                    <!-- Remplacez src par votre photo si vous voulez -->
+                    <img id="hero-img"
+                        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><rect width='100%' height='100%' fill='%233b1a3f'/><text x='50%' y='50%' fill='%23ffd9e6' font-size='20' text-anchor='middle' dominant-baseline='middle' font-family='Inter'>Replace image</text></svg>"
+                        alt="Portrait">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="reveal">
+            <h3 style="color:var(--pink);letter-spacing:1px">ABOUT ME</h3>
+            <div style="height:18px"></div>
+            <div class="card about-grid">
+                <div>
+                    <div class="about-avatar">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='500'><rect width='100%' height='100%' fill='%233b1a3f'/><text x='50%' y='50%' fill='%23ffd9e6' font-size='20' text-anchor='middle' dominant-baseline='middle' font-family='Inter'>Replace avatar</text></svg>"
+                            alt="avatar" style="width:100%;height:100%;object-fit:cover;display:block">
+                    </div>
+                </div>
+                <div>
+                    <p class="muted">Je suis un développeur passionné par la création de solutions numériques
+                        innovantes. Bien que je sois en début de carrière, j'ai déjà acquis des compétences en HTML/CSS,
+                        JavaScript, React, Vue, Python Django, Flutter et UI/UX. J'aime relever des défis techniques et
+                        apprendre de nouvelles technologies pour améliorer mes compétences.</p>
+
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px">
+                        <div class="muted">ONLINE COMMUNITY<br><small>Youtube 11k • Dribbble 112k</small></div>
+                        <div class="stats">
+                            <div class="stat"><strong>+60</strong><small class="muted">Projets</small></div>
+                            <div class="stat"><strong>+2</strong><small class="muted">Clients</small></div>
+                            <div class="stat"><strong>+120</strong><small class="muted">Git Repos</small></div>
+                        </div>
+                    </div>
+
+                    <div class="download" style="margin-top:22px">
+                        <a class="btn" href="#" onclick="alert('Remplacez le lien par votre CV PDF')">Télécharger mon
+                            CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal">
+            <h3 style="color:var(--pink);letter-spacing:1px">My Skills</h3>
+            <div style="height:18px"></div>
+            <div class="card skills-wrap">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+                    <div>
+                        <h4 class="muted">Front‑End</h4>
+                        <div class="skill">
+                            <div class="meta"><span>HTML</span><span>94%</span></div>
+                            <div class="progress">
+                                <div class="bar" data-width="94%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="meta"><span>CSS</span><span>86%</span></div>
+                            <div class="progress">
+                                <div class="bar" data-width="86%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="meta"><span>JavaScript</span><span>90%</span></div>
+                            <div class="progress">
+                                <div class="bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="meta"><span>React</span><span>73%</span></div>
+                            <div class="progress">
+                                <div class="bar" data-width="73%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="muted">Back‑end</h4>
+                        <div class="skill">
+                            <div class="meta"><span>PHP</span><span>94%</span></div>
+                            <div class="progress">
+                                <div class="bar" data-width="94%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="meta"><span>Python</span><span>86%</span></div>
+                            <div class="progress">
+                                <div class="bar" data-width="86%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="meta"><span>Node.js</span><span>90%</span></div>
+                            <div class="progress">
+                                <div class="bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="meta"><span>Django</span><span>73%</span></div>
+                            <div class="progress">
+                                <div class="bar" data-width="73%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="height:18px"></div>
+                <h4 class="muted">Autres capacités</h4>
+                <div class="skill">
+                    <div class="meta"><span>Git/Github</span><span>85%</span></div>
+                    <div class="progress">
+                        <div class="bar" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="meta"><span>Gestion de projets</span><span>78%</span></div>
+                    <div class="progress">
+                        <div class="bar" data-width="78%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="meta"><span>UI/UX Design</span><span>88%</span></div>
+                    <div class="progress">
+                        <div class="bar" data-width="88%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <h3 style="color:var(--pink);letter-spacing:1px">Projects</h3>
+            <div style="height:18px"></div>
+            <div class="projects-grid">
+                <div class="project card">
+                    <h4>Project One</h4>
+                    <p class="muted">Une brève description du projet. Cliquez pour voir plus.</p>
+                    <div style="margin-top:12px"><a class="btn" href="#">Voir</a></div>
+                </div>
+                <div class="project card">
+                    <h4>Project Two</h4>
+                    <p class="muted">Une brève description du projet.</p>
+                </div>
+                <div class="project card">
+                    <h4>Project Three</h4>
+                    <p class="muted">Une brève description du projet.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal">
+            <h3 style="color:var(--pink);letter-spacing:1px">Contact</h3>
+            <div style="height:18px"></div>
+            <div class="card contact">
+                <div>
+                    <form
+                        onsubmit="event.preventDefault();alert('Formulaire simulé — implémentez un backend ou utilisez Formspree')">
+                        <input class="input" placeholder="Votre nom" required>
+                        <div style="height:12px"></div>
+                        <input class="input" placeholder="Votre email" type="email" required>
+                        <div style="height:12px"></div>
+                        <textarea placeholder="Message" required></textarea>
+                        <div style="height:12px"></div>
+                        <button class="btn primary" type="submit">Envoyer</button>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="muted">Infos</h4>
+                    <p class="muted">Email: <strong style="color:var(--pink)">youremail@example.com</strong></p>
+                    <p class="muted">Localisation: Kinshasa, RDC (remplacez si besoin)</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align:center;padding:36px 0;color:var(--muted)">© <span id="year"></span> NEO COOLMAN — Made
+            with ❤️</footer>
+    </main>
+</body>
+
+</html>
