@@ -813,9 +813,61 @@
     padding: 20px;
   }
   
+  /* Styles pour les catégories de projets */
+  .project-category {
+    color: var(--accent);
+    margin: 40px 0 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .project-category i {
+    color: var(--pink);
+  }
+  
+  /* Styles pour la grille de projets */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  
+  /* Styles pour les cartes de projet */
+  .project {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin: -20px -20px 20px -20px;
+  }
+  
   .project h4 {
     margin: 0 0 10px;
     color: var(--pink);
+    font-size: 1.2rem;
+  }
+  
+  .project p {
+    margin-bottom: 15px;
+    flex-grow: 1;
   }
   
   .tech-tags {
@@ -836,6 +888,74 @@
   .tech-tag i {
     margin-right: 5px;
     color: var(--pink);
+  }
+  
+  /* Styles pour les étiquettes de compétences */
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--muted);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Styles pour les liens des projets */
+  .project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+  }
+  
+  .project-links .btn {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  /* Style pour les boutons de petite taille */
+  .btn.small {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  /* Responsive pour les écrans moyens */
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+  }
+  
+  /* Responsive pour les petits écrans */
+  @media (max-width: 600px) {
+    .project-category {
+      font-size: 1.2rem;
+    }
+    
+    .project-image {
+      height: 160px;
+    }
+    
+    .project-links {
+      flex-direction: column;
+    }
+    
+    .project-links .btn {
+      width: 100%;
+    }
   }
 
   /* Footer & Contact */
