@@ -756,9 +756,9 @@
   /* Projects */
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 30px 0 60px 0;
   }
   
   .project {
@@ -810,27 +810,43 @@
   }
   
   .project-content {
-    padding: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
   
   .project h4 {
-    margin: 0 0 10px;
     color: var(--pink);
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    font-weight: 600;
   }
   
   .tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 15px;
+    margin: 8px 0 16px 0;
   }
   
   .tech-tag {
     background: rgba(255, 255, 255, 0.05);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
     color: var(--muted);
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    line-height: 1.4;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+  
+  .tech-tag:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
   }
   
   .tech-tag i {

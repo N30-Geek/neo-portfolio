@@ -342,13 +342,15 @@
     height:360px;
     border-radius:48% 52% 50% 50% / 40% 40% 60% 60%;
     background:radial-gradient(circle at 30% 20%, #3e1a7a 0%, #6b2145 40%, #2a0a1b 100%);
-    display:grid;
-    place-items:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     position:relative;
     box-shadow:0 30px 80px rgba(0,0,0,0.6);
     transition:all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style:preserve-3d;
     animation:float 6s ease-in-out infinite;
+    overflow:hidden;
   }
   
   .blob:hover{
@@ -357,13 +359,13 @@
   }
   
   .blob img{
-    width:70%;
-    height:70%;
+    width:100%;
+    height:100%;
     object-fit:cover;
-    border-radius:50%;
-    border:8px solid rgba(255,255,255,0.05);
     transition:all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     transform:translateZ(30px);
+    position:relative;
+    z-index:1;
   }
   
   .blob:hover img{
@@ -376,10 +378,11 @@
     position:absolute;
     width:100%;
     height:100%;
-    border-radius:inherit;
     background:radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
-    opacity:0.5;
+    opacity:0.3;
     transition:all 0.8s ease;
+    z-index:2;
+    pointer-events:none;
   }
   
   .blob:hover::before{
@@ -511,6 +514,31 @@
     color: var(--accent);
     width: 18px;
     text-align: center;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 16px 0;
+  }
+  
+  .project-tags .tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--muted);
+    padding: 6px 12px;
+    border-radius: 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    line-height: 1.4;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+  
+  .project-tags .tag:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
   }
   
   .skill-tags {
@@ -767,6 +795,9 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   
   .project:hover {
@@ -778,17 +809,21 @@
     position: relative;
     height: 200px;
     overflow: hidden;
+    background: var(--card);
+    border-radius: 12px 12px 0 0;
   }
   
   .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    will-change: transform;
   }
   
   .project:hover .project-image img {
     transform: scale(1.05);
+    filter: brightness(1.05);
   }
   
   .project-overlay {
@@ -810,18 +845,46 @@
   }
   
   .project-content {
-    padding: 20px;
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .project h4 {
+    color: var(--pink);
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  
+  .project p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 12px 0;
+    line-height: 1.7;
+    min-height: 5.1em; /* Ajustement pour 3 lignes avec un meilleur espacement */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 3;
   }
   
   /* Styles pour les catégories de projets */
   .project-category {
     color: var(--accent);
-    margin: 40px 0 20px;
+    margin: 60px 0 24px 0;
     font-size: 1.4rem;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
   
   .project-category i {
@@ -831,130 +894,20 @@
   /* Styles pour la grille de projets */
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    margin-bottom: 40px;
-  }
-  
-  /* Styles pour les cartes de projet */
-  .project {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  
-  .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  .project-image {
-    width: 100%;
-    height: 180px;
-    background-size: cover;
-    background-position: center;
-    border-radius: var(--radius) var(--radius) 0 0;
-    margin: -20px -20px 20px -20px;
-  }
-  
-  .project h4 {
-    margin: 0 0 10px;
-    color: var(--pink);
-    font-size: 1.2rem;
-  }
-  
-  .project p {
-    margin-bottom: 15px;
-    flex-grow: 1;
-  }
-  
-  .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 15px;
-  }
-  
-  .tech-tag {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    color: var(--muted);
-  }
-  
-  .tech-tag i {
-    margin-right: 5px;
-    color: var(--pink);
-  }
-  
-  /* Styles pour les étiquettes de compétences */
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .tag {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--muted);
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  /* Styles pour les liens des projets */
-  .project-links {
-    display: flex;
-    gap: 10px;
-    margin-top: auto;
-  }
-  
-  .project-links .btn {
-    flex: 1;
-    text-align: center;
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-  
-  /* Style pour les boutons de petite taille */
-  .btn.small {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
-  
-  /* Responsive pour les écrans moyens */
-  @media (max-width: 900px) {
-    .projects-grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-  }
-  
-  /* Responsive pour les petits écrans */
-  @media (max-width: 600px) {
-    .project-category {
-      font-size: 1.2rem;
-    }
-    
-    .project-image {
-      height: 160px;
-    }
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 30px 0 60px 0;
     
     .project-links {
-      flex-direction: column;
-    }
-    
-    .project-links .btn {
-      width: 100%;
+      margin-top: 8px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      
+      .btn {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
     }
   }
 
@@ -1090,11 +1043,31 @@
     }
   }
   
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .project-image {
+      height: 180px;
+    }
+  }
+  
   @media (max-width: 768px) {
     html, body {
       overflow-x: hidden;
       width: 100%;
       position: relative;
+    }
+    
+    .project-category {
+      font-size: 1.2rem;
+      margin: 30px 0 15px;
+    }
+    
+    .project-image {
+      height: 160px;
     }
     
     header { 
