@@ -120,7 +120,7 @@ async function afficherNombreRepos() {
     }
 
     // Remplacer 'votre-nom-utilisateur' par votre nom d'utilisateur GitHub
-    const username = 'votre-nom-utilisateur';
+    const username = 'n30-geek';
     if (username === 'votre-nom-utilisateur') {
       console.warn("Veuillez remplacer 'votre-nom-utilisateur' par votre nom d'utilisateur GitHub");
       statRepo.textContent = "+0";
